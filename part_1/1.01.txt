@@ -1,0 +1,5 @@
+dennis@dennis-KubuntuVirtualBox:~$ docker ps -a
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                     PORTS               NAMES
+54b9810c260b        nginx               "/docker-entrypoint.…"   43 seconds ago      Up 42 seconds              80/tcp              goofy_khayyam
+469a5c1d7eb2        nginx               "/docker-entrypoint.…"   45 seconds ago      Up 44 seconds              80/tcp              wizardly_torvalds
+7cb7c3d254ad        nginx               "/docker-entrypoint.…"   48 seconds ago      Exited (0) 3 seconds ago                       keen_bose
