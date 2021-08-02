@@ -1,0 +1,4 @@
+dennis@dennis-KubuntuVirtualBox:~$ docker ps -a
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+dennis@dennis-KubuntuVirtualBox:~$ docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
