@@ -1,0 +1,2 @@
+build . -t hello-docker
+docker run hello-docker
