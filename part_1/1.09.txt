@@ -1,0 +1,5 @@
+touch $(pwd)/text.log
+docker run -v $(pwd)/text.log:/usr/src/app/text.log devopsdockeruh/simple-web-service
+# 2021-08-03 10:39:10 +0000 UTC Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+
+# I spent a lot of time before I realised this was a permissions issue.
