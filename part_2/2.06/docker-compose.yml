@@ -1,0 +1,45 @@
+version: '3.5' 
+
+services: 
+
+    exercise_206_frontend: 
+      #image: node:14-buster
+      build:
+        context: ./frontend/
+        dockerfile: Dockerfile
+      ports: 
+        - 5000:5000
+      container_name: exercise_206_frontend
+      
+      
+    exercise_206_backend: 
+      #image: devopsdockeruh/simple-web-service
+      
+      build:
+        context: ./backend/
+        dockerfile: Dockerfile
+      environment:
+        - REDIS_HOST=exercise_206_redis
+        - POSTGRES_HOST=exercise_206_postgres
+        - POSTGRES_USER=postgres
+        - POSTGRES_PASSWORD=mysecretpassword
+        - POSTGRES_DATABASE=postgres
+      ports: 
+        - 8080:8080
+      container_name: exercise_206_backend
+      
+    exercise_206_redis: 
+      image: redis
+      #build: .
+      #ports: 
+        #- 6379:6379
+      container_name: exercise_206_redis
+      
+    exercise_206_postgres: 
+      image: postgres:latest
+      #build: .
+      environment:
+        - POSTGRES_PASSWORD=mysecretpassword
+      #ports: 
+        #- 6379:6379
+      container_name: exercise_206_postgres
