@@ -1,0 +1,32 @@
+version: '3.5' 
+
+services: 
+
+    exercise_204_frontend: 
+      #image: node:14-buster
+      build:
+        context: ./frontend/
+        dockerfile: Dockerfile
+      ports: 
+        - 5000:5000
+      container_name: exercise_204_frontend
+      
+      
+    exercise_204_backend: 
+      #image: devopsdockeruh/simple-web-service
+      
+      build:
+        context: ./backend/
+        dockerfile: Dockerfile
+      environment:
+        - REDIS_HOST=exercise_204_redis
+      ports: 
+        - 8080:8080
+      container_name: exercise_204_backend
+      
+    exercise_204_redis: 
+      image: redis
+      build: .
+      #ports: 
+        #- 6379:6379
+      container_name: exercise_204_redis
