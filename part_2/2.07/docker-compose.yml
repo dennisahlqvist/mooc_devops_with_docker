@@ -1,0 +1,35 @@
+version: '3.5' 
+
+services: 
+
+    exercise_207_frontend:
+      build:
+        context: ./frontend/
+      ports: 
+        - 3000:3000
+      container_name: exercise_207_frontend
+      
+      
+    exercise_207_backend:
+      
+      build:
+        context: ./backend/
+      volumes:
+        - model:/src/model
+      ports: 
+        - 5000:5000
+      container_name: exercise_207_backend
+      
+    exercise_207_training:
+      build:
+        context: ./training/
+      volumes:
+        - model:/src/model
+        - training_vol:/src/imgs
+      container_name: exercise_207_training
+
+
+volumes:
+    model:
+    training_vol:
+      
