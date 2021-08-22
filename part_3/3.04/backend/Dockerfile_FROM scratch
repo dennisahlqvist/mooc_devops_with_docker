@@ -1,0 +1,15 @@
+FROM golang:1.16-alpine
+WORKDIR /user/src/myapp
+COPY ./example-backend .
+ARG CGO_ENABLED=0
+ARG GOOS=linux
+#ARG GOARCH=amd64
+RUN go build
+
+
+FROM scratch  
+WORKDIR /user/src/myapp
+COPY --from=0 /user/src/myapp/ ./
+ENV REQUEST_ORIGIN=http://localhost:5000
+CMD ["./server"]
+EXPOSE 8080

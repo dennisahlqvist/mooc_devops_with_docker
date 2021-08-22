@@ -1,0 +1,6 @@
+backend
+start size 							-> 1.01GB
+NO RUNs to combine
+step1: rm -rf $(go env GOCACHE), size of GOCACHE was 58M	-> 950MB  (Exercise 3.4)
+step2: switch FROM golang:1.16 to FROM golang:1.16-alpine	-> 390MB  (Exercise 3.5)
+FROM scratch 							-> 18.1MB (Exercise 3.6)

@@ -1,0 +1,4 @@
+start size 							-> 1.14GB
+step1: combine RUNs 						-> 1.14GB (Exercise 3.4)
+step2: switch FROM node:14-buster to FROM node:14-alpine   	-> 343MB (Exercise 3.5)
+multistage 							-> 126MB (Exercise 3.6)
