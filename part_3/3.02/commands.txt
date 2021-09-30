@@ -1,0 +1,5 @@
+This image require the folowing arguments in this order 
+<dockerhub username> <dockerhub password> <imagename for dockerhub> <url to github ZIP file>
+
+
+docker build -t exercise302 . && docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock exercise302 username password imagename https://github.com/dennisahlqvist/mooc_devops_with_docker_exercise_3_1/archive/refs/heads/main.zip
